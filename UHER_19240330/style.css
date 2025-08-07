@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Gaya Umum dan Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #e0e0e0;
+    padding-top: 75px;
+    padding-bottom: 50px;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Header & Navigasi */
+.header {
+    background-color: #f8f8f8;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 35px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 1.5em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Kontainer baru untuk navbar dan hamburger menu */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Jarak antara navbar dan hamburger-menu */
+}
+
+/* Tampilkan navigasi desktop secara default */
+.desktop-nav {
+    display: flex;
+}
+
+.desktop-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.desktop-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    padding: 10px 15px;
+    transition: color 0.3s;
+}
+
+.desktop-nav ul li a:hover,
+.desktop-nav ul li a.active {
+    color: #007bff;
+}
+
+/* Tampilkan hamburger menu secara default */
+.hamburger-menu {
+    display: block;
+    cursor: pointer;
+}
+
+.hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Menu mobile yang muncul dari samping tetap berfungsi */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100vh;
+    background: #007bff;
+    box-shadow: -5px 0 10px rgba(0,0,0,0.1);
+    transition: right 0.3s ease-in-out;
+    z-index: 999;
+}
+
+.mobile-nav.active {
+    right: 0;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding-top: 80px;
+}
+
+.mobile-nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.mobile-nav ul li a:hover,
+.mobile-nav ul li a.active {
+    background-color: #0056b3;
+}
+
+/* Gaya Konten Utama (Gabungan) */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+/* ... (kode untuk .hero, .profile-section, .gallery-section) ... */
+/* Gaya ini sama dengan file CSS sebelumnya */
+.hero {
+    height: 550px;
+    background-image: url(assets/slideshow1.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    padding-top: 60px;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Perbesar container pada profile */
+.profile-section {
+    max-width: 2000px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 40px 40px 40px 40px;
+}
+
+.section-title {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.profile-content-wrapper {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+}
+
+.profile-text {
+    flex: 2;
+}
+
+.profile-text p {
+    font-size: 1em;
+    color: #555;
+    text-align: justify;
+}
+
+.profile-image {
+    flex: 1;
+}
+
+.profile-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.gallery-section {
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.gallery-items-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.gallery-item {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.card-image-wrapper {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+.gallery-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.card-title-wrapper {
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-item h3 {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #333;
+}
+
+.gallery-item.expanded {
+    width: 100%;
+    flex-direction: row;
+    gap: 30px;
+    cursor: default;
+}
+
+.gallery-item.expanded .card-image-wrapper {
+    width: 30%;
+    border-bottom: none;
+    border-right: 1px solid #ccc;
+}
+
+.gallery-item.expanded .card-title-wrapper {
+    display: none;
+}
+
+.gallery-item.expanded .card-description {
+    display: block;
+    flex: 1;
+}
+
+.gallery-item.expanded:hover {
+    transform: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Footer */
+.footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-weight: 600;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries Responsif */
+@media (max-width: 768px) {
+    /* Di layar mobile, sembunyikan navigasi desktop */
+    .desktop-nav {
+        display: none;
+    }
+    .header-right {
+        gap: 0; /* Menghilangkan jarak di mobile */
+    }
+    
+    /* ... (kode untuk konten responsif lainnya) ... */
+    .profile-content-wrapper {
+        flex-direction: column;
+    }
+    
+    .section-title::after {
+        width: 60px;
+    }
+    
+    .gallery-items-container {
+        flex-direction: column;
+    }
+    
+    .gallery-item {
+        width: 100%;
+    }
+    
+    .gallery-item.expanded {
+        flex-direction: column;
+    }
+    
+    .gallery-item.expanded .card-image-wrapper {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+    }
+}
